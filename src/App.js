@@ -12,8 +12,8 @@ function App() {
   return (
     <div className='container'>
       <Scoreboard scoreLions={scoreLions} scoreTigers={scoreTigers} />
-      <Stats />
       <Buttons scoreLions={scoreLions} scoreTigers={scoreTigers} setScoreLions={setScoreLions} setScoreTigers={setScoreTigers} />
+      <Stats />
       <p>Stats from <a href='https://sportsdata.io/developers/api-documentation/nfl#' target="_blank">Sports Data API Solutions</a></p>
     </div>
   );
