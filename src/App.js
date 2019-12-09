@@ -1,26 +1,20 @@
-import React, {useState} from "react";
-import "./App.css";
+import React, {useState} from 'react';
+import './App.css';
 import Scoreboard from './Scoreboard';
+import Buttons from './Buttons';
+import Stats from './Stats';
 
 function App() {
 
   const [scoreLions, setScoreLions] = useState(0);
   const [scoreTigers, setScoreTigers] = useState(0);
 
-
   return (
-    <div className="container">
+    <div className='container'>
       <Scoreboard scoreLions={scoreLions} scoreTigers={scoreTigers} />
-      <section className="buttons">
-        <div className="homeButtons">
-            <button className="homeButtons__touchdown" onClick={() => setScoreLions(scoreLions + 7)}>Home Touchdown</button>
-            <button className="homeButtons__fieldGoal" onClick={() => setScoreLions(scoreLions + 3)}>Home Field Goal</button>
-        </div>
-        <div className="awayButtons">
-            <button className="awayButtons__touchdown" onClick={() => setScoreTigers(scoreTigers + 7)}>Away Touchdown</button>
-            <button className="awayButtons__fieldGoal" onClick={() => setScoreTigers(scoreTigers + 3)}>Away Field Goal</button>
-        </div>
-      </section>
+      <Stats />
+      <Buttons scoreLions={scoreLions} scoreTigers={scoreTigers} setScoreLions={setScoreLions} setScoreTigers={setScoreTigers} />
+      <p>Stats from <a href='https://sportsdata.io/developers/api-documentation/nfl#' target="_blank">Sports Data API Solutions</a></p>
     </div>
   );
 }
