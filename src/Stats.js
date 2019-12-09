@@ -11,10 +11,11 @@ export default class Buttons extends Component {
         }
     }
 
+
+// Turn on Moesif CORS chrome plugin
 componentDidMount() {
     axios.get('https://api.sportsdata.io/v3/nfl/scores/json/AllTeams?key=8ed083931a1e4ce8bb67d4e6ac28238d')
     .then(response => {
-        // console.log(response);
         this.setState({
             Gb: response.data[12],
             Chi: response.data[6],
